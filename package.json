@@ -7,17 +7,17 @@
     "test": "test"
   },
   "scripts": {
-    "compile": "truffle compile",
-    "migrate": "truffle migrate",
+    "compile": "truffle migrate --network skale --compile-all --config=truffle.js",
+    "migrate": "truffle migrate  --network skale",
     "deploy": "npm run compile && npm run migrate",
     "fix:js": "eslint --fix test/** migrations/**",
     "lint:js": "eslint test/** migrations/** security/**",
     "lint:sol": "solhint contracts/*.sol contracts/*/*.sol test/*.sol test/*/*.sol",
     "lint": "npm run lint:js && npm run lint:sol",
     "mythril": "node security/mythril.js",
-    "publish": "truffle publish",
+    "publish": "truffle test --network skale",
     "pretest": "npm run lint",
-    "test": "truffle migrate; truffle test"
+    "test": "truffle test --network skale"
   },
   "repository": {
     "type": "git",

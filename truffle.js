@@ -10,6 +10,11 @@ module.exports = {
       port: ETH_PORT || 7545,
       network_id: '*',
     },
+    skale: {
+      provider: () => new HDWalletProvider(MNEMONIC, 'https://staging-v2.skalenodes.com/v1/stocky-pleione'),
+      networkCheckTimeout: 999999, 
+      network_id: '1250011826715177',
+    },
     live: {
       provider: () => new HDWalletProvider(MNEMONIC, `https://mainnet.infura.io/${INFURA_TOKEN}`),
       network_id: '1',
